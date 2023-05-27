@@ -1,12 +1,13 @@
 import React from 'react'
 
-const HomepageContainer = ({books}) => {
+const HomepageContainer = () => {
 
 
-  return (
-    <div>
-    </div>
-  )
+	return (
+		<div>
+			
+		</div>
+	);
 }
 
 export default HomepageContainer
