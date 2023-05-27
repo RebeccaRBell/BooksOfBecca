@@ -33,14 +33,20 @@ const BookListContainer = ({books}) => {
 
         const bookList = books.map((book, index) => {
         return (
-					<div className="book-card" key={index} onClick={() => handleBookClick(book)}>
-                                                        <div className="image">
+					<div
+						className="book-card"
+						key={index}
+						onClick={() => handleBookClick(book)}
+					>
+						<a href="#selected">
+							<div className="image">
 								<img src={book.image} />
 							</div>
 							<div>
 								<h1>{book.title}</h1>
 								<h3>{book.author}</h3>
 							</div>
+						</a>
 					</div>
 				);
         })
@@ -48,7 +54,7 @@ const BookListContainer = ({books}) => {
 
   return (
 		<div>
-			<div>{selectedBook ? <BookItem book={selectedBook} apiBook={apiBook} /> : null}</div>
+			<div id='selected'>{selectedBook ? <BookItem book={selectedBook} apiBook={apiBook} /> : null}</div>
 			<div className="book-card-container">{bookList}</div>
 		</div>
 	);

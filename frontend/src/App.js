@@ -29,7 +29,6 @@ function App() {
   return (
     <div className="App">
   <Router>
-  <Navbar />
     <Routes>
       <Route path ="/" element={<HomepageContainer />}/>
       <Route path = "/books" element={<BookListContainer books={books}/>}/>

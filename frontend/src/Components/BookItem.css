@@ -1,0 +1,13 @@
+.selected-book-container {
+        background-color: rgb(230,220,220);
+        height: 50vh;
+        display: flex;
+        flex-flow: row;
+        width: 90%;
+        margin: 0 auto;
+        margin: 5%;
+
+}
+.selected-book-container img{
+        height: 100%;
+}
