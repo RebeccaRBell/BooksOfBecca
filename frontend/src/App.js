@@ -9,8 +9,12 @@ function App() {
 
   const [books, setBooks] = useState([]);
 
+  useEffect(() => {
+    fetchBooks();
+  }, [])
 
-  const handleFetchBooks = () => {
+
+  const fetchBooks = () => {
     getBooks().then(res => res.json())
     .then(data => setBooks(data))
     console.log(books)
@@ -19,8 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <HomepageContainer />
-      <button onClick={handleFetchBooks}></button>
+      <HomepageContainer books={books} />
     </div>
   );
 }

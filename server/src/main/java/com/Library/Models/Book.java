@@ -16,14 +16,10 @@ public class Book{
     private String title;
     @Column(name="author")
     private String author;
-    @Column(name="genre")
-    private List<GenreType> genre;
-
-    @Column(name="synopsis")
-    private String synopsis;
-
     @Column(name="image")
     private String image;
+    @Column(name="genre")
+    private List<GenreType> genre;
 
     @Column (name="reviews")
     @OneToMany(targetEntity = Review.class)
@@ -33,12 +29,11 @@ public class Book{
     private int number_available;
 
 
-    public Book(String title, String author, List<GenreType> genre, String synopsis, String image, List<Review> reviews, int number_available){
+    public Book(String title, String author, String image, List<GenreType> genre, List<Review> reviews, int number_available){
         this.title = title;
         this.author = author;
-        this.genre = genre;
-        this.synopsis = synopsis;
         this.image = image;
+        this.genre = genre;
         this.reviews = reviews;
         this.number_available = number_available;
 
@@ -70,22 +65,6 @@ public class Book{
         this.author = author;
     }
 
-
-    public String getSynopsis() {
-        return synopsis;
-    }
-
-    public void setSynopsis(String synopsis) {
-        this.synopsis = synopsis;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public int getNumber_available() {
         return number_available;
@@ -119,4 +98,11 @@ public class Book{
         this.genre.add(genre);
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

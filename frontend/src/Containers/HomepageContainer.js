@@ -1,8 +1,11 @@
 import React from 'react'
 
-const HomepageContainer = () => {
+const HomepageContainer = ({books}) => {
+
+
   return (
-    <div>HomepageContainer</div>
+    <div>
+    </div>
   )
 }
 
