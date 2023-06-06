@@ -5,10 +5,7 @@ import com.Library.Repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -23,15 +20,28 @@ public class BookController {
     BookRepository bookRepository;
 
 
-    @GetMapping(value="/api/books")
+    @GetMapping(value="/books")
     public ResponseEntity<List<Book>> getAllBooks() {
         return new ResponseEntity<>(bookRepository.findAll(), HttpStatus.OK);
 
     }
 
-    @GetMapping(value="/api/books/{id}")
-    public ResponseEntity<Optional<Book>> getBook(@RequestBody Long id){
-        return new ResponseEntity<>(bookRepository.findById(id), HttpStatus.OK);
+    @GetMapping("/book/{id}")
+    public Optional<Book> getBook(@PathVariable Long id) {
+        return bookRepository.findById(id);
+    }
+
+    @DeleteMapping("/book/{id}")
+    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+        Optional<Book> optionalBook = bookRepository.findById(id);
+
+        if (optionalBook.isPresent()) {
+            Book book = optionalBook.get();
+            bookRepository.delete(book);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
 }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './BookListContainer.css'
 import HomepageContainer from './HomepageContainer';
 import BookItem from '../Components/BookItem';
+import { deleteBook } from '../helpers/BookService';
 
 const BookListContainer = ({books}) => {
 
@@ -29,6 +30,13 @@ const BookListContainer = ({books}) => {
                         setApiBook(book)
                   }
                 })
+                console.log(apiBook)
+        }
+        
+        const handleDeleteBook = (book) => {
+          console.log(book)
+          deleteBook(book);
+          getBooksFromAPI();
         }
 
         const bookList = books.map((book, index) => {
@@ -47,6 +55,7 @@ const BookListContainer = ({books}) => {
 								<h3>{book.author}</h3>
 							</div>
 						</a>
+            <h1 onClick={handleDeleteBook}>X</h1>
 					</div>
 				);
         })
@@ -54,7 +63,6 @@ const BookListContainer = ({books}) => {
 
   return (
 		<div>
-			<div id='selected'>{selectedBook ? <BookItem book={selectedBook} apiBook={apiBook} /> : null}</div>
 			<div className="book-card-container">{bookList}</div>
 		</div>
 	);

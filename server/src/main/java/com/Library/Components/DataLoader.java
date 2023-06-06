@@ -108,9 +108,12 @@ public class DataLoader implements ApplicationRunner {
 
 
 
-        User user1 = new User("Dianne Smith", "d.smith@gmail.com", "dianne", "21 Baker Street, London, W1U 8EQ", new ArrayList<Book>());
-        user1.addBook(book1);
+        User user1 = new User("Test", "test@gmail.com", "test", "21 Baker Street, London, W1U 8EQ", new ArrayList<Book>());
         userRepository.save(user1);
+        User user2 = new User("Sue Baker", "sue.baker@gmail.com", "suesue", "97 Brookfield Avenue, Hucknall, Nottingham, NG15 6FF", new ArrayList<Book>());
+        userRepository.save(user2);
+        User user3 = new User("Dianne Smithers", "d.smithers@gmail.com", "dianne", "21 Baker Street, London, W1U 8EQ", new ArrayList<Book>());
+        userRepository.save(user3);
 
         Review review1 = new Review("A classic for a reason.", "Shaun Brookes", 5, book1.getId());
         reviewRepository.save(review1);

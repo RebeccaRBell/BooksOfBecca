@@ -14,6 +14,12 @@ export const getBooks = () => {
 		});
 };
 
+ export const deleteBook = () => {
+    	return fetch(baseURL, {
+      	method: "DELETE",
+      	headers: { "Content-Type": "application/json" },
+    });
+  }
 // export const postResult = (payload) => {
 // 	return fetch(baseURL, {
 // 		method: "POST",

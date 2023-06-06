@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import { getBooks } from './helpers/BookService';
 import BookItem from './Components/BookItem';
+import LoginContainer from './Containers/LoginContainer';
+import RegisterContainer from './Containers/RegisterContainer';
 
 
 
@@ -26,11 +28,15 @@ function App() {
 
 
 
+
+
   return (
     <div className="App">
   <Router>
     <Routes>
-      <Route path ="/" element={<HomepageContainer />}/>
+      <Route path ="/" element={<LoginContainer />}/>
+      <Route path="/register" element ={<RegisterContainer />} />
+      <Route path="/home" element = {<HomepageContainer />} />
       <Route path = "/books" element={<BookListContainer books={books}/>}/>
     </Routes>
   </Router>
