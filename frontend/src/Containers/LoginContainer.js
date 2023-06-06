@@ -2,12 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { getUsers } from '../helpers/UserService';
 
-const LoginContainer = () => {
+const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, password, user, email}) => {
 
-        const [password, setPassword] = useState("");
-        const [email, setEmail] = useState("");
-        const [users, setUsers] = useState([]);
-        const [user, setUser] = useState(null);
 
         useEffect(() => {
           getUsers().then(res => res.json()).then(data => setUsers(data))
@@ -23,14 +19,17 @@ const LoginContainer = () => {
                 setPassword(event.target.value);
         }
 
-        const verifyUser = () => {
-                 const foundUser = users.find((user) => {
-                  if (user.email === email && user.password === password){
-                        return user
-                  }
-                })
+	const verifyUser = () => {
+		const foundUser = users.find((user) => {
+			if (user.email === email && user.password === password) {
+				return user;
+				}
+			});
 		setUser(foundUser);
-        }
+	};
+
+
+  
        
   return (
 		<div>
@@ -51,8 +50,8 @@ const LoginContainer = () => {
 						onChange={handlePassword}
 						autoComplete="current-password"
 					/>
-					{user  ? (
-						<Link to="/books">
+					{ user ? (
+						<Link to="/home">
 							<button className="login-button">fart</button>
 						</Link>
 					) : (
