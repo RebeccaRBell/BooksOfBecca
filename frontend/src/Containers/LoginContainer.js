@@ -36,12 +36,13 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 		<div className='login-container'>
 			<div className="opening-left">
 				<h1 className='logo-text'>
-					Shelf <br/>
-					Share
+					Borro
 				</h1>
+				<h3>Your Personalised Online Library</h3>
 			</div>
 			<div className='opening-right'>
 			<div className="login">
+			<h3>Log In</h3>
 				<form className="login-form">
 					<input
 						type="text"
@@ -62,7 +63,6 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 					) : (
 						<button className="login-button">Log In</button>
 					)}
-					<p>or</p>
 					<button>Register</button>
 				</form>
 			</div>
