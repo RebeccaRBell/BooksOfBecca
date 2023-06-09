@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { getUsers } from '../helpers/UserService';
 import './LoginContainer.css'
+import LoggedOutNavbar from '../Components/LoggedOutNavbar';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faBars} from '@fortawesome/free-solid-svg-icons'
+
 
 const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, password, user, email, verifyUser}) => {
 
+	const [hoverMenu, setHoverMenu] = useState(false);
 
         useEffect(() => {
           getUsers().then(res => res.json()).then(data => setUsers(data))
@@ -20,17 +25,39 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
                 setPassword(event.target.value);
         }
 
+	const handleMenuHover = () => {
+		setHoverMenu(true)
+	}
+
+	const handleMenuHoverLeave = () => {
+		setHoverMenu(false);
+	};
 
 
-  
+  	const hovering = `${hoverMenu ? "hovering" : ""}`;
+
        
   return (
 		<div className="login-container">
+			{hoverMenu ? (
+				<div onMouseLeave={handleMenuHoverLeave}>
+					<LoggedOutNavbar />
+				</div>
+			) : null}
 			<div className="opening-left">
 				<h1 className="logo-text">Borro</h1>
 				<h3>Your Personalised Online Library</h3>
 			</div>
 			<div className="opening-right">
+				<div>
+					<FontAwesomeIcon
+						icon={faBars}
+						onMouseOver={handleMenuHover}
+						id="hamburger"
+						className={hovering}
+						
+					/>
+				</div>
 				<div className="login">
 					<form className="login-form">
 						<h3>Log In</h3>

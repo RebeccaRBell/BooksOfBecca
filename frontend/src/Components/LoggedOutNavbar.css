@@ -1,0 +1,37 @@
+:root {
+        --logo-font: 'Bagel Fat One', cursive;
+        --subheading-font: 'Quicksand', sans-serif;
+        --dark-backing: #364743;
+        --lighter-backing: #87AFA7;
+        --font-color: #e7efee;
+}
+.navbar{
+        height: 11%;
+        position: absolute;
+        width: 60%;
+        left: 40%;
+        z-index: 1;
+        font-family: var(--subheading-font);
+        
+}
+.navbar-list{
+        height: 100%;
+        margin: 0px;
+        display: flex;
+        flex-flow: row nowrap;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 10%;
+        
+}
+.navbar-list li, a{
+        text-decoration: none;
+        text-align: center;
+        color: var(--font-color);
+        font-size: 20px;
+        font-weight: 900;
+        margin: 0px;
+        padding: 0px;
+}
