@@ -1,6 +1,5 @@
 import React , {useState} from 'react'
 import './HomepageContainer.css';
-import { Link } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 
 const HomepageContainer = ({user}) => {

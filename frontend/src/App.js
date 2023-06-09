@@ -34,13 +34,23 @@ function App() {
     const logOutUser = () => {
       setUser(null)
     }
+    	const verifyUser = () => {
+				const foundUser = users.find((user) => {
+					if (user.email === email && user.password === password) {
+						return user;
+					}
+				});
+				setUser(foundUser);
+			};
+
+
 
 
   return (
     <div className="App">
   <Router>
     <Routes>
-      <Route path ="/" element={<LoginContainer setUser={setUser} setEmail={setEmail} user={user} setUsers={setUsers} setPassword={setPassword} users={users} password={password} email={email}/>}/>
+      <Route path ="/" element={<LoginContainer setUser={setUser} setEmail={setEmail} user={user} setUsers={setUsers} setPassword={setPassword} users={users} password={password} email={email} verifyUser={verifyUser}/>}/>
       <Route path="/register" element ={<RegisterContainer />} />
       <Route path="/home" element = {<HomepageContainer user={user}/>} />
       <Route path = "/books" element={<BookListContainer books={books} user={user}/>}/>

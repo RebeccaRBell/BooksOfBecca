@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getUsers } from '../helpers/UserService';
 import './LoginContainer.css'
 
-const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, password, user, email}) => {
+const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, password, user, email, verifyUser}) => {
 
 
         useEffect(() => {
@@ -20,14 +20,6 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
                 setPassword(event.target.value);
         }
 
-	const verifyUser = () => {
-		const foundUser = users.find((user) => {
-			if (user.email === email && user.password === password) {
-				return user;
-				}
-			});
-		setUser(foundUser);
-	};
 
 
   
