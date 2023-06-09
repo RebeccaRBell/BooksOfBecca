@@ -33,40 +33,40 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
   
        
   return (
-		<div className='login-container'>
+		<div className="login-container">
 			<div className="opening-left">
-				<h1 className='logo-text'>
-					Borro
-				</h1>
+				<h1 className="logo-text">Borro</h1>
 				<h3>Your Personalised Online Library</h3>
 			</div>
-			<div className='opening-right'>
-			<div className="login">
-			<h3>Log In</h3>
-				<form className="login-form">
-					<input
-						type="text"
-						placeholder="email"
-						onChange={handleEmail}
-						autoComplete="email"
-					/>
-					<input
-						type="password"
-						placeholder="password"
-						onChange={handlePassword}
-						autoComplete="current-password"
-					/>
-					{ user ? (
-						<Link to="/home">
-							<button className="login-button">Welcome</button>
+			<div className="opening-right">
+				<div className="login">
+					<form className="login-form">
+						<h3>Log In</h3>
+						<input
+							type="text"
+							placeholder="email"
+							onChange={handleEmail}
+							autoComplete="email"
+						/>
+						<input
+							type="password"
+							placeholder="password"
+							onChange={handlePassword}
+							autoComplete="current-password"
+						/>
+						{user ? (
+							<Link to="/home">
+								<button className="login-button">Come on in!</button>
+							</Link>
+						) : (
+							<button className="login-button">Log In</button>
+						)}
+						<Link to="/register">
+							<button>Register</button>
 						</Link>
-					) : (
-						<button className="login-button">Log In</button>
-					)}
-					<button>Register</button>
-				</form>
+					</form>
+				</div>
 			</div>
-		</div>
 		</div>
 	);
 }
