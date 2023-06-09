@@ -1,0 +1,72 @@
+.login-container {
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(4, 11, 6, 0.9);
+        font-family: 'Bagel Fat One', cursive;
+}
+.opening-left{
+        width: 50%;
+        height: 100%;
+        
+}
+.logo-text{
+        text-align: left;
+        font-size: 180px;
+        position: relative;
+        left: 10%;
+        top: 10%;
+        background-image: url('https://img.freepik.com/free-vector/colorful-terrazzo-pattern-design_23-2148973514.jpg?w=1380&t=st=1686332545~exp=1686333145~hmac=be0453c58d69d19e687ad9073a010c408ba4fabec4556e9a67f707e3b956cfe7');
+        background-clip: text;
+        color: transparent;
+        line-height: 200px;
+        margin: 0px;
+
+}
+.opening-right {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: rgba(173, 217, 185, 0.9)
+}
+
+.login {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+        color: white;
+        background-color: rgba(250, 250, 250, 0.95);
+        box-shadow: 5px 5px 15px 5px rgba(250, 250, 250, 0.4);
+        border-radius: 2%;
+        left: 25%;
+        top: 20%;
+
+}
+
+.login-form {
+        display: flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        width: 70%;
+        height: 80%;
+        margin: 0 auto;
+        color: white;
+}
+
+.login-form p {
+        margin: 0px;
+        color: white;
+}
+
+.login-form input {
+        height: 25px;
+        margin: 5%;
+        font-size: 15px;
+        border-radius: 5px;
+        padding-left: 5px;
+        border: none;
+        color: white;
+}

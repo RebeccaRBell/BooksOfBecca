@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { getUsers } from '../helpers/UserService';
+import './LoginContainer.css'
 
 const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, password, user, email}) => {
 
@@ -32,11 +33,15 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
   
        
   return (
-		<div>
-			<div className="opening-left"></div>
+		<div className='login-container'>
+			<div className="opening-left">
+				<h1 className='logo-text'>
+					Shelf <br/>
+					Share
+				</h1>
+			</div>
+			<div className='opening-right'>
 			<div className="login">
-				<h1>ShelfShare</h1>
-				<p>An online community for borrowing books</p>
 				<form className="login-form">
 					<input
 						type="text"
@@ -61,6 +66,7 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 					<button>Register</button>
 				</form>
 			</div>
+		</div>
 		</div>
 	);
 }
