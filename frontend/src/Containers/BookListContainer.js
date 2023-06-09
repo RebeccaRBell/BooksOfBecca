@@ -4,6 +4,7 @@ import './BookListContainer.css'
 import HomepageContainer from './HomepageContainer';
 import BookItem from '../Components/BookItem';
 import { deleteBook } from '../helpers/BookService';
+import Navbar from '../Components/Navbar';
 
 const BookListContainer = ({books}) => {
 
@@ -63,6 +64,7 @@ const BookListContainer = ({books}) => {
 
   return (
 		<div>
+    <Navbar />
 			<div className="book-card-container">{bookList}</div>
 		</div>
 	);

@@ -52,7 +52,7 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 					/>
 					{ user ? (
 						<Link to="/home">
-							<button className="login-button">fart</button>
+							<button className="login-button">Welcome</button>
 						</Link>
 					) : (
 						<button className="login-button">Log In</button>

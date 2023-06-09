@@ -8,6 +8,7 @@ import { getBooks } from './helpers/BookService';
 import BookItem from './Components/BookItem';
 import LoginContainer from './Containers/LoginContainer';
 import RegisterContainer from './Containers/RegisterContainer';
+import ProfileContainer from './Containers/ProfileContainer';
 
 
 
@@ -17,7 +18,7 @@ function App() {
     const [password, setPassword] = useState("");
 		const [email, setEmail] = useState("");
 		const [users, setUsers] = useState([]);
-		const [user, setUser] = useState(null);
+		const [user, setUser] = useState([]);
 
 		useEffect(() => {
 			fetchBooks();
@@ -30,8 +31,8 @@ function App() {
 			console.log(books);
 		};
 
-    const handleUser = () => {
-      setUser()
+    const logOutUser = () => {
+      setUser(null)
     }
 
 
@@ -43,6 +44,7 @@ function App() {
       <Route path="/register" element ={<RegisterContainer />} />
       <Route path="/home" element = {<HomepageContainer user={user}/>} />
       <Route path = "/books" element={<BookListContainer books={books} user={user}/>}/>
+      <Route path="/profile" element={<ProfileContainer user={user} logOutUser={logOutUser} setUser={setUser}/>} />
     </Routes>
   </Router>
     </div>
