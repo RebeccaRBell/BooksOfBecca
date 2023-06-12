@@ -38,7 +38,7 @@
         position: relative;
         text-align: left;
         font-weight: 400;
-        left: 20%;
+        left: 45%;
         top: 7%;
         margin: 0px;
         font-size: 22px;
@@ -54,6 +54,25 @@
         top: 0px;
         right: 0px;
         background-color: #87AFA7;
+}
+
+#hamburger {
+        color: var(--font-color);
+        font-size: 40px;
+        position: fixed;
+        right: 3%;
+        top: 3%;
+        z-index: 5;
+}
+
+#hamburger:hover {
+        transform: rotate(90deg);
+        transition-duration: 1s;
+
+}
+
+#hamburger.hovering {
+        transform: rotate(90deg);
 }
 
 .login {

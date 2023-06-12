@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { getUsers } from '../helpers/UserService';
 import './LoginContainer.css'
-import LoggedOutNavbar from '../Components/LoggedOutNavbar';
+import BurgerMenu from '../Components/BurgerMenu';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBars} from '@fortawesome/free-solid-svg-icons'
 
@@ -41,12 +41,12 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 		<div className="login-container">
 			{hoverMenu ? (
 				<div onMouseLeave={handleMenuHoverLeave}>
-					<LoggedOutNavbar />
+					<BurgerMenu/>
 				</div>
 			) : null}
 			<div className="opening-left">
 				<h1 className="logo-text">Borro</h1>
-				<h3>Your Personalised Online Library</h3>
+				<h3>Your Online Library</h3>
 			</div>
 			<div className="opening-right">
 				<div>

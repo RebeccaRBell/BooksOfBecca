@@ -9,6 +9,7 @@ import BookItem from './Components/BookItem';
 import LoginContainer from './Containers/LoginContainer';
 import RegisterContainer from './Containers/RegisterContainer';
 import ProfileContainer from './Containers/ProfileContainer';
+import AboutContainer from './Components/AboutSection';
 
 
 

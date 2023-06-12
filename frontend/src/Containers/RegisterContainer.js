@@ -2,12 +2,16 @@ import React, { useState } from 'react'
 import  './RegisterContainer.css'
 import { registerUser } from '../helpers/UserService';
 import LoginContainer from './LoginContainer';
+import BurgerMenu from '../Components/BurgerMenu';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const RegisterContainer = () => {
 
         const [registerName, setRegisterName] = useState("");
-        const [registerEmail, setRegisterEmail] = useState("")
-        const [registerPassword, setRegisterPassword] = useState("")
+        const [registerEmail, setRegisterEmail] = useState("");
+        const [registerPassword, setRegisterPassword] = useState("");
+	const [hoverMenu, setHoverMenu] = useState(false);
 
 	const handleRegisterEmail = (event) => {
 		setRegisterEmail(event.target.value)
@@ -38,17 +42,43 @@ const RegisterContainer = () => {
 	}
 
 
+	const handleMenuHover = () => {
+		setHoverMenu(true);
+	};
+
+	const handleMenuHoverLeave = () => {
+		setHoverMenu(false);
+	};
+
+	const hovering = `${hoverMenu ? "hovering" : ""}`;
+
+       
+
+
 
   return (
-		<div className='register-container'>
+		<div className="register-container">
+			{hoverMenu ? (
+				<div onMouseLeave={handleMenuHoverLeave}>
+					<BurgerMenu />
+				</div>
+			) : null}
 			<div className="opening-left">
 				<h1 className="logo-text">Borro</h1>
-				<h3>Your Personalised Online Library</h3>
+				<h3>Your Online Library</h3>
 			</div>
 			<div className="opening-right">
-				<div className='login'>
+				<div>
+					<FontAwesomeIcon
+						icon={faBars}
+						onMouseOver={handleMenuHover}
+						id="hamburger"
+						className={hovering}
+					/>
+				</div>
+				<div className="login">
 					<form className="login-form">
-					<h3>Register</h3>
+						<h3>Register</h3>
 						<input
 							type="text"
 							placeholder="name"
@@ -67,7 +97,7 @@ const RegisterContainer = () => {
 							onInput={handleRegisterPassword}
 							autoComplete="new-password"
 						/>
-							<button onClick={handleRegisterUser}>Register</button>
+						<button onClick={handleRegisterUser}>Register</button>
 					</form>
 				</div>
 			</div>
