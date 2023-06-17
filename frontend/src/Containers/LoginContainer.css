@@ -52,12 +52,40 @@
         z-index: 5;
 }
 #hamburger:hover{
-        transform: rotate(90deg);
-        transition-duration: 1s; 
+        cursor: pointer;
 
 }
 #hamburger.hovering{
-        transform: rotate(90deg);
+        animation-name: icon-rotation;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        
+}
+
+@keyframes icon-rotation {
+        0%{
+                transform: rotate(0deg);
+        }
+        100%{
+                transform: rotate(90deg);
+        }
+}
+
+#hamburger.leave{
+        animation-name: icon-rotation2;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+
+}
+
+@keyframes icon-rotation2 {
+        0% {
+                transform: rotate(90deg);
+        }
+
+        100% {
+                transform: rotate(0deg);
+        }
 }
 
 .opening-right {

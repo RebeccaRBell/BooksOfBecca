@@ -1,0 +1,25 @@
+:root {
+        --logo-font: 'Bagel Fat One', cursive;
+        --subheading-font: 'Quicksand', sans-serif;
+        --dark-backing: #364743;
+        --lighter-backing: #87AFA7;
+        --font-color: #e7efee;
+}
+
+.browse-container {
+        width: 60%;
+        height: 89vh;
+        position: absolute;
+        z-index: 5;
+        right: 0px;
+        top: 11%;
+        background-color: var(--lighter-backing);
+}
+.browse-text-container{
+        margin: 0px;
+        padding: 0px;
+}
+.browse-text-container h3{
+        margin: 0px;
+        padding: 0px;
+}

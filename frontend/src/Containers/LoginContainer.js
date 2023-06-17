@@ -17,6 +17,8 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
           verifyUser();
         }, [password])
 
+	const hovering = `${hoverMenu ? "hovering" : "leave"}`;
+
         const handleEmail = (event) => {
                 setEmail(event.target.value);
         }
@@ -33,8 +35,16 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 		setHoverMenu(false);
 	};
 
+	const handleIconClick = () => {
+		if (hoverMenu === true){
+			setHoverMenu(false)
+		} else {
+			setHoverMenu(true);
+		}
+	}
 
-  	const hovering = `${hoverMenu ? "hovering" : ""}`;
+
+  	
 
        
   return (
@@ -52,7 +62,7 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 				<div>
 					<FontAwesomeIcon
 						icon={faBars}
-						onMouseOver={handleMenuHover}
+						onClick={handleIconClick}
 						id="hamburger"
 						className={hovering}
 						

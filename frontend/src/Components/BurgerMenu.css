@@ -53,4 +53,5 @@ sans-serif;
 .navbar-list li:hover{
         border-bottom: 5px solid var(--dark-backing);
         margin-bottom: -5px;
+        cursor: pointer;
 }

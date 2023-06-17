@@ -1,0 +1,17 @@
+:root {
+        --logo-font: 'Bagel Fat One', cursive;
+        --subheading-font: 'Quicksand', sans-serif;
+        --dark-backing: #364743;
+        --lighter-backing: #87AFA7;
+        --font-color: #e7efee;
+}
+
+.contact-container {
+        width: 60%;
+        height: 89%;
+        position: absolute;
+        z-index: 5;
+        right: 0px;
+        top: 11%;
+        background-color: var(--lighter-backing);
+}
