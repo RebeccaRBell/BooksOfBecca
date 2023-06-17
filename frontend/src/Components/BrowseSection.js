@@ -1,12 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './BrowseSection.css'
+import { getBooks } from '../helpers/BookService'
 
-const BrowseSection = ({handleLeaveBrowse}) => {
+const BrowseSection = () => {
+
+  const [browseBooks, setBrowseBooks] = useState([])
+
+  useEffect(() => {
+    getBooks()
+			.then((res) => res.json())
+			.then((data) => setBrowseBooks(data));
+  })
+
+  const bookList = browseBooks.map((book) => {
+    return <div className='browse-book-item'>
+      <img src={book.image}/>
+    </div>
+  })
+
   return (
     <div className='browse-container'>
     <div className='browse-text-container'>
-        <h3>Browse Our Titles</h3>
+        <h3>Below is a selection of our titles</h3>
     </div>
+    <div className='browse-book-list'>{bookList}</div>
     </div>
   )
 }

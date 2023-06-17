@@ -9,6 +9,7 @@
 .browse-container {
         width: 60%;
         height: 89vh;
+        max-height: 89vh;
         position: absolute;
         z-index: 5;
         right: 0px;
@@ -21,5 +22,21 @@
 }
 .browse-text-container h3{
         margin: 0px;
-        padding: 0px;
+        padding: 20px;
+        color: var(--font-color)
+}
+.browse-book-list {
+        margin: 0 auto;
+        width: 90%;
+        height: 80%;
+        overflow:auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        gap: 10%;
+}
+.browse-book-item img{
+        width: 200px;
+        height: 350px;
+
 }
