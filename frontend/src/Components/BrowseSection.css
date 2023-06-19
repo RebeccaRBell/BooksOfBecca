@@ -29,14 +29,16 @@
         margin: 0 auto;
         width: 90%;
         height: 80%;
-        overflow:auto;
+        overflow: auto;
+        scroll-behavior: smooth;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
         gap: 10%;
+        
 }
 .browse-book-item img{
-        width: 200px;
-        height: 350px;
+        width: 150px;
+        height: 230px;
 
 }

@@ -1,4 +1,4 @@
-/* :root {
+:root {
         --logo-font: 'Bagel Fat One', cursive;
         --subheading-font: 'Quicksand', sans-serif;
         --dark-backing: #364743;
@@ -75,6 +75,7 @@
         transform: rotate(90deg);
 }
 
+
 .login {
         position: absolute;
         width: 50%;
@@ -94,12 +95,23 @@
         flex-flow: column;
         flex-wrap: nowrap;
         justify-content: center;
-        gap: 10%;
+        gap: 12%;
         width: 70%;
         height: 100%;
         margin: 0 auto;
         color: var(--dark-backing);
 
+}
+#back-icon{
+        font-size: 25px;
+        color: var(--dark-backing);
+        position: absolute;
+        top: 8%;
+        left: 15%;
+}
+#back-icon:hover {
+        cursor: pointer;
+        color: var(--lighter-backing)
 }
 
 .login-form h3 {
@@ -131,4 +143,4 @@
 }
 button:hover {
         cursor: pointer;
-} */
+}

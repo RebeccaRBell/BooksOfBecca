@@ -4,7 +4,7 @@ import { registerUser } from '../helpers/UserService';
 import LoginContainer from './LoginContainer';
 import BurgerMenu from '../Components/BurgerMenu';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleLeft, faArrowLeftRotate, faBars, faHandBackFist } from "@fortawesome/free-solid-svg-icons";
 
 const RegisterContainer = () => {
 
@@ -12,6 +12,7 @@ const RegisterContainer = () => {
         const [registerEmail, setRegisterEmail] = useState("");
         const [registerPassword, setRegisterPassword] = useState("");
 	const [hoverMenu, setHoverMenu] = useState(false);
+	const[hoverBackButton, setHoverBackButton] = useState(false);
 
 	const handleRegisterEmail = (event) => {
 		setRegisterEmail(event.target.value)
@@ -52,7 +53,7 @@ const RegisterContainer = () => {
 
 	const hovering = `${hoverMenu ? "hovering" : ""}`;
 
-       
+       const backButtonText = `${hoverBackButton ? "back-button-text": ""}`
 
 
 
@@ -77,8 +78,16 @@ const RegisterContainer = () => {
 					/>
 				</div>
 				<div className="login">
+					<FontAwesomeIcon
+						id="back-icon"
+						icon={faArrowCircleLeft}
+						onClick={() => {
+							window.location.href = "/";
+						}}
+					/>
 					<form className="login-form">
 						<h3>Register</h3>
+
 						<input
 							type="text"
 							placeholder="name"
