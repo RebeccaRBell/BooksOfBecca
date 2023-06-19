@@ -32,7 +32,7 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 	}
 
 	const handleMenuHoverLeave = () => {
-		setHoverMenu(false);
+		// setHoverMenu(false);
 	};
 
 	const handleIconClick = () => {

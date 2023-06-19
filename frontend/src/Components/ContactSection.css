@@ -14,8 +14,54 @@
         right: 0px;
         top: 11%;
         background-color: var(--lighter-backing);
+        font-family: vaR(--subheading-font);
+        color: var(--font-color)
 }
 
 .contact-text-container{
-        
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+        margin-top: 5%;
+}
+.contact-text-container p {
+        font-size: 18px;
+        font-weight: 500;
+}
+.contact-text-container form {
+        width: 70%;
+        height: 60%;
+        margin: 0 auto;
+        margin-top: 10%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        background-color: var(--font-color);
+        border-radius: 10px;
+}
+.contact-text-container input {
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 10px;
+        border: none;
+        height: 8%;
+}
+.contact-text-container textarea {
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 10px;
+        border: none;
+        padding-left: 10px;
+        font-family: var(--subheading-font);
+}
+.contact-text-container button {
+        width: 30%;
+        margin: 0 auto;
+        color:var(--font-color);
+        font-size: 15px;
+        background-color: var(--lighter-backing);
+        border: none;
+        padding: 1%;
+        border-radius: 10px;
+
 }
