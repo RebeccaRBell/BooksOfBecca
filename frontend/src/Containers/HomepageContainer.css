@@ -1,0 +1,31 @@
+:root {
+        --logo-font: 'Bagel Fat One', cursive;
+        --subheading-font: 'Quicksand', sans-serif;
+        --poppins-font: 'Poppins', sans-serif;
+        --main-backing: #fff9e8;
+        --sub-backing: #d0aa99;
+        --font-color: #e7efee;
+}
+
+.homepage-container{
+        width: 100%;
+        height: 100vh;
+        font-family: var(--poppins-font);
+        background-color: var(--font-color);
+}
+
+.users-books{
+        width: 80%;
+        margin: 0 auto;
+        background-color: var(--sub-backing);
+        
+}
+.users-books-list {
+        display: flex;
+        flex-flow: row;
+
+}
+.users-books-list img {
+        width: 200px;
+
+}

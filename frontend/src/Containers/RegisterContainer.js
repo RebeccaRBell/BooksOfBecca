@@ -58,14 +58,14 @@ const RegisterContainer = () => {
 
 
   return (
-		<div className="register-container">
+		<div className="login-register-container">
 			{hoverMenu ? (
 				<div onMouseLeave={handleMenuHoverLeave}>
 					<BurgerMenu />
 				</div>
 			) : null}
 			<div className="opening-left">
-				<h1 className="logo-text">Borro</h1>
+				<h1 className="logo-text">borro</h1>
 				<h3>Your Online Library</h3>
 			</div>
 			<div className="opening-right">

@@ -1,21 +1,17 @@
-:root {
-        --logo-font: 'Bagel Fat One', cursive;
-        --subheading-font: 'Quicksand', sans-serif;
-        --dark-backing: #364743;
-        --lighter-backing: #87AFA7;
-        --font-color: #e7efee;
-}
 
 .navbar-cont {
-        width: 100%;
+        width: 30%;
         height: 10vh;
-        background-color: var(--dark-backing);
+        position: sticky;
+        top: 3%;
+        left:  70%;
+        background-color: transparent;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-around;
 }
 .nav-link {
-        color: white;
+        color:var(--dark-backing);
         text-decoration: none;
-        font-size: 50px;
+        font-size: 25px;
 }

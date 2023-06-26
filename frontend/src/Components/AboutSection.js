@@ -15,6 +15,7 @@ const AboutSection = ({handleLeaveAbout}) => {
 					eget felis eget nunc lobortis mattis aliquam. Ipsum nunc aliquet
 					bibendum enim facilisis gravida neque.
 				</p>
+				<br />
 				<p>
 					Dictum varius duis at consectetur lorem donec massa. Felis bibendum ut
 					tristique et egestas quis ipsum suspendisse. Volutpat consequat mauris

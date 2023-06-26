@@ -1,20 +1,4 @@
-/* 
-font-family: 'Bagel Fat One',
-cursive;
-font-family: 'Poppins',
-sans-serif;
-font-family: 'Quicksand',
-sans-serif;
-*/
 
-:root {
-        --logo-font: 'Bagel Fat One', cursive;
-        --subheading-font1: 'Quicksand', sans-serif;
-        --subheading-font2: font-family: 'Poppins',sans-serif;
-        --dark-backing: #364743;
-        --lighter-backing: #87AFA7;
-        --font-color: #e7efee;
-}
 .burger-menu-container {
         
 }
@@ -24,7 +8,8 @@ sans-serif;
         width: 60%;
         left: 40%;
         z-index: 1;
-        font-family: var(--subheading-font2);
+        font-family: var(--raleway);
+        font-weight: 500;
         
 }
 .navbar-list{

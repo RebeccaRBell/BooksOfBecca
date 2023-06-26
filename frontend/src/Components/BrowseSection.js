@@ -21,7 +21,6 @@ const BrowseSection = () => {
   return (
     <div className='browse-container'>
     <div className='browse-text-container'>
-        <h3>Below is a selection of our titles</h3>
     </div>
     <div className='browse-book-list'>{bookList}</div>
     </div>

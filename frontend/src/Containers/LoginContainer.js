@@ -1,61 +1,62 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
-import { getUsers } from '../helpers/UserService';
-import './LoginContainer.css'
-import BurgerMenu from '../Components/BurgerMenu';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faBars} from '@fortawesome/free-solid-svg-icons'
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getUsers } from "../helpers/UserService";
+import "./LoginContainer.css";
+import BurgerMenu from "../Components/BurgerMenu";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-
-const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, password, user, email, verifyUser}) => {
-
+const LoginContainer = ({
+	setPassword,
+	setUsers,
+	setEmail,
+	users,
+	password,
+	user,
+	verifyUser,
+}) => {
 	const [hoverMenu, setHoverMenu] = useState(false);
 
-        useEffect(() => {
-          getUsers().then(res => res.json()).then(data => setUsers(data))
-          console.log(users)
-          verifyUser();
-        }, [password])
+	useEffect(() => {
+		getUsers()
+			.then((res) => res.json())
+			.then((data) => setUsers(data));
+		console.log(users);
+		verifyUser();
+	}, [password]);
 
 	const hovering = `${hoverMenu ? "hovering" : "leave"}`;
 
-        const handleEmail = (event) => {
-                setEmail(event.target.value);
-        }
-
-        const handlePassword = (event) => {
-                setPassword(event.target.value);
-        }
-
-	const handleMenuHover = () => {
-		setHoverMenu(true)
-	}
-
-	const handleMenuHoverLeave = () => {
-		// setHoverMenu(false);
+	const handleEmail = (event) => {
+		setEmail(event.target.value);
 	};
 
+	const handlePassword = (event) => {
+		setPassword(event.target.value);
+	};
+
+
+
 	const handleIconClick = () => {
-		if (hoverMenu === true){
-			setHoverMenu(false)
-		} else {
-			setHoverMenu(true);
-		}
-	}
+
+			if (hoverMenu === true) {
+				setHoverMenu(false);
+			} else {
+				setHoverMenu(true);
+			}
+	};
 
 
-  	
 
-       
-  return (
-		<div className="login-container">
+	return (
+		<div className="login-register-container">
 			{hoverMenu ? (
-				<div onMouseLeave={handleMenuHoverLeave}>
-					<BurgerMenu/>
+				<div>
+					<BurgerMenu />
 				</div>
 			) : null}
 			<div className="opening-left">
-				<h1 className="logo-text">Borro</h1>
+				<h1 className="logo-text">borro</h1>
 				<h3>Your Online Library</h3>
 			</div>
 			<div className="opening-right">
@@ -65,7 +66,6 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 						onClick={handleIconClick}
 						id="hamburger"
 						className={hovering}
-						
 					/>
 				</div>
 				<div className="login">
@@ -83,21 +83,27 @@ const LoginContainer = ({setPassword, setUsers, setUser, setEmail, users, passwo
 							onChange={handlePassword}
 							autoComplete="current-password"
 						/>
-						{user ? (
-							<Link to="/home">
-								<button className="login-button">Come on in!</button>
+						<div className="login-buttons">
+							{user ? (
+								<Link to="/home">
+									<button className="login-button">
+										Welcome,{" "}
+										{user.name.split(" ")[0]}!
+									</button>
+								</Link>
+							) : (
+								<button className="login-button">Log In</button>
+							)}
+							</div>
+							<Link to="/register">
+								<button>Register</button>
 							</Link>
-						) : (
-							<button className="login-button">Log In</button>
-						)}
-						<Link to="/register">
-							<button>Register</button>
-						</Link>
+
 					</form>
 				</div>
 			</div>
 		</div>
 	);
-}
+};
 
-export default LoginContainer
+export default LoginContainer;

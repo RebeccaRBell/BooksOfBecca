@@ -3,13 +3,10 @@ import React, {useEffect, useState} from 'react';
 import HomepageContainer from './Containers/HomepageContainer';
 import BookListContainer from './Containers/BookListContainer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Components/Navbar';
 import { getBooks } from './helpers/BookService';
-import BookItem from './Components/BookItem';
 import LoginContainer from './Containers/LoginContainer';
 import RegisterContainer from './Containers/RegisterContainer';
 import ProfileContainer from './Containers/ProfileContainer';
-import AboutContainer from './Components/AboutSection';
 
 
 

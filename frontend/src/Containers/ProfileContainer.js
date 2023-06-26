@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from '../Components/Navbar';
 
 const ProfileContainer = ({setUser, user, logOutUser}) => {
 
@@ -9,10 +10,15 @@ const ProfileContainer = ({setUser, user, logOutUser}) => {
         }
 
   return (
-    <div>
-        <button onClick={handleLogOut}>Log Out</button>
-    </div>
-  )
+		<>
+			<Navbar />
+			<div className="profile-container">
+				<div>Your Subscription</div>
+				<div>Subscription Plans</div>
+        <div onClick={handleLogOut}>Log Out</div>
+			</div>
+		</>
+	);
 }
 
 export default ProfileContainer

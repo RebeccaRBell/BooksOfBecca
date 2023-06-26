@@ -1,18 +1,44 @@
-:root {
-        --logo-font: 'Bagel Fat One', cursive;
-        --subheading-font: 'Quicksand', sans-serif;
-        --dark-backing: #364743;
-        --lighter-backing: #87AFA7;
-        --font-color: #e7efee;
-}
+/* font-family: 'Bagel Fat One',
+cursive;
+font-family: 'Hubballi',
+cursive;
+font-family: 'Libre Barcode 128 Text',
+cursive;
+font-family: 'Libre Barcode 39 Extended Text',
+cursive;
+font-family: 'Newsreader',
+serif;
+font-family: 'Poppins',
+sans-serif;
+font-family: 'Quicksand',
+sans-serif;
+font-family: 'Raleway',
+sans-serif;
+
+ */
+ :root {
+         --bagel-fat-one: 'Bagel Fat One', cursive;
+        --hubbali: 'Hubballi', cursive;
+         --quicksand: 'Quicksand', sans-serif;
+         --poppins: 'Poppins', sans-serif;
+         --libre-barcode-128: 'Libre Barcode 128 Text', cursive;
+         --libre-barcode-39: 'Libre Barcode 39 Extended Text', cursive;
+         --newsreader: 'Newsreader',
+                serif;
+        --raleway: 'Raleway',
+                sans-serif;
+         --dark-backing: #354743;
+         --lighter-backing: #87AFA7;
+         --font-color: #e7efee;
+ }
 
 
-.login-container {
+
+.login-register-container {
         width: 100%;
         height: 100vh;
         max-height: 100vh;
-        background-color: #364743;
-
+        background-color: #354743;
 }
 .opening-left{
         width: 40%;
@@ -31,19 +57,22 @@
         color: transparent;
         line-height: 200px;
         margin: 0px;
-        font-family: var(--logo-font);
+        font-family: var(--bagel-fat-one);
+        font-weight: 900;
+        letter-spacing: 5px;
+       
 
 }
 .opening-left h3 {
         color: var(--font-color);
         position: relative;
-        text-align: left;
-        font-weight: 400;
-        left: 20%;
+        text-align: right;
+        font-weight: 200;
         top: 7%;
+        right: 20%;
         margin: 0px;
         font-size: 22px;
-        font-family: var(--subheading-font);
+        font-family: var(--raleway);
 }
 
 #hamburger {
@@ -97,7 +126,7 @@
         position: absolute;
         top: 0px;
         right: 0px;
-        background-color: #87AFA7;
+        background-color: var(--lighter-backing);
 }
 
 .login {
@@ -109,7 +138,7 @@
         border-radius: 2%;
         left: 25%;
         top: 20%;
-        font-family: var(--logo-font);
+        font-family: var(--raleway);
         font-size: 20px;
 
 }
@@ -118,16 +147,24 @@
         display: flex;
         flex-flow: column;
         flex-wrap: nowrap;
-        justify-content: center;
-        gap: 10%;
+        justify-content: space-evenly;
         width: 70%;
         height: 100%;
         margin: 0 auto;
         color: var(--dark-backing);
+        font-family: var(--raleway);
 
+}
+.login-buttons {
+        margin-bottom: -5%;
 }
 .login-form h3{
         margin: 0px;
+        font-family: var(--poppins);
+        font-size: 30px;
+        letter-spacing: -1px;
+        font-weight: 300;
+        
 }
 .login-form input {
         height: 8%;
@@ -148,6 +185,7 @@
         font-family: var(--subheading-font);
         font-size: 15px;
         font-weight: 500;
+        margin-bottom: -5%;
 }
 button:hover {
         cursor: pointer;
