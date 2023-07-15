@@ -101,6 +101,7 @@ public class DataLoader implements ApplicationRunner {
         bookRepository.save(book19);
         Book book20 = new Book("The Nightingale", "Kristin Hannah","https://cdn.waterstones.com/bookjackets/large/9781/5098/9781509898411.jpg", new ArrayList<GenreType>(), new ArrayList<Review>(), 5);
         book20.addGenre(GenreType.FICTION);
+        bookRepository.save(book20);
 
 
 

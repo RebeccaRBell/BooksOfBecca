@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './BookItem.css'
+import { getBooks } from '../helpers/BookService'
 
-const BookItem = ({book, apiBook}) => {
-        console.log(apiBook)
+const BookItem = ({selectedBook}) => {
+
+
   return (
     <div className='selected-book-container'>
     <div>
-        <img src={book.image}/>
+        <img src={selectedBook.image}/>
 </div>
 <div>
-        <h3>{book.title}</h3>
-        <h4>{book.author}</h4>
-        <p>{apiBook.synopsis}</p>
+        <h3>{selectedBook.title}</h3>
+        <h4>{selectedBook.author}</h4>
+        {/* <p>{apiBook.synopsis}</p> */}
         </div>
     </div>
   )

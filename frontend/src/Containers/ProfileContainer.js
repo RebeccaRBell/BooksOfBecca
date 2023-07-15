@@ -1,21 +1,24 @@
 import React from 'react'
 import Navbar from '../Components/Navbar';
+import './ProfileContainer.css'
 
 const ProfileContainer = ({setUser, user, logOutUser}) => {
 
         const handleLogOut = () => {
               logOutUser();
               window.location.href="/"
-              setUser([])
+              setUser(null)
         }
 
   return (
 		<>
-			<Navbar />
 			<div className="profile-container">
-				<div>Your Subscription</div>
-				<div>Subscription Plans</div>
-        <div onClick={handleLogOut}>Log Out</div>
+				<Navbar />
+				<div className="profile-links">
+					<div>Your Subscription</div>
+					<div>Subscription Plans</div>
+					<div onClick={handleLogOut}>Log Out</div>
+				</div>
 			</div>
 		</>
 	);

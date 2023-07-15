@@ -35,18 +35,13 @@ const LoginContainer = ({
 		setPassword(event.target.value);
 	};
 
-
-
 	const handleIconClick = () => {
-
-			if (hoverMenu === true) {
-				setHoverMenu(false);
-			} else {
-				setHoverMenu(true);
-			}
+		if (hoverMenu === true) {
+			setHoverMenu(false);
+		} else {
+			setHoverMenu(true);
+		}
 	};
-
-
 
 	return (
 		<div className="login-register-container">
@@ -87,18 +82,16 @@ const LoginContainer = ({
 							{user ? (
 								<Link to="/home">
 									<button className="login-button">
-										Welcome,{" "}
-										{user.name.split(" ")[0]}!
+										Welcome, {user.name.split(" ")[0]}!
 									</button>
 								</Link>
 							) : (
 								<button className="login-button">Log In</button>
 							)}
-							</div>
-							<Link to="/register">
-								<button>Register</button>
-							</Link>
-
+						</div>
+						<Link to="/register">
+							<button>Register</button>
+						</Link>
 					</form>
 				</div>
 			</div>
